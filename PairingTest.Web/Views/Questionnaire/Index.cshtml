@@ -1,0 +1,23 @@
+﻿@model PairingTest.Web.Models.QuestionnaireViewModel
+    
+@{
+    ViewBag.Title = Model.QuestionnaireTitle;
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>@Model.QuestionnaireTitle</h2>
+
+<div class="row">
+    @foreach (var question in Model.QuestionList)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading">@question.Value</div>
+            <div class="panel-body">
+                @foreach (var answer in question.AnswerList)
+                {
+                    <div class="row panel-body-site">@answer</div>
+                }
+            </div>
+        </div>
+    }
+</div>
